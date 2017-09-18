@@ -1,0 +1,572 @@
+<!-- *******************************************-->
+<!-- *                                         *-->
+<!-- *  Portfolio Project for SC Code class    *-->
+<!-- *                                         *-->
+<!-- *  dr wootten                             *-->
+<!-- *  september 2017                         *-->
+<!-- *                                         *-->
+<!-- *******************************************-->
+
+<!-- *******************************************-->
+<!-- *                                         *-->
+<!-- *  Need to:                               *-->
+<!-- *                                         *-->
+<!-- *  1. Access all of the portfolio         *-->
+<!-- *  webpage's content just by scrolling.   *-->
+<!-- *                                         *-->
+<!-- *  2. Click different buttons that will   *-->
+<!-- *  take the user to the portfolio         *-->
+<!-- *  creator's different social media       *-->
+<!-- *  pages                                  *-->
+<!-- *                                         *-->
+<!-- *  3. See thumbnail images of different   *-->
+<!-- *  projects the portfolio creator has     *-->
+<!-- *  built                                  *-->
+<!-- *                                         *-->
+<!-- *  4. Navigate to different sections of   *-->
+<!-- *  the webpage by clicking buttons in the *-->
+<!-- *  navigation                             *-->
+<!-- *                                         *-->
+<!-- *******************************************-->
+
+  <!doctype html>
+
+  <html lang="en">
+
+  <head>
+
+    <!-- *******************************************-->
+    <!-- *  define character encoding for the      *-->
+    <!-- *  document                               *-->
+    <!-- *******************************************-->    
+
+    <meta charset="utf-8">
+
+    <!-- This is the tab in the browser -->
+    <title>
+      Portfolio Project - DRW
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- this is used so the website will scale with different devices, like a phone or tablet-->
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+
+  </head>
+
+  <style>
+
+  <!-- *******************************************-->
+  <!-- *  Navigation bar button characteristics  *-->
+  <!-- *  are below (in CSS)                     *-->
+  <!-- *******************************************-->
+
+  #nav-wrapper 
+    {
+      width:465px;
+      margin:0 auto;
+      padding:20px 0;
+      background:#7FFFD4;
+    }
+
+  ul#nav 
+    {
+      font-family: Verdana;
+      font-size:14px;
+      list-style:none;
+      margin:0 auto;
+      padding:0;
+      width:455px;
+      overflow: auto;
+    }
+
+  ul#nav li 
+    {
+      display:inline;
+    }
+
+  ul#nav li a 
+    {
+      text-decoration:none;
+      display: block;
+      padding:5px 21px;
+
+      /*normal button color*/
+      background:gainsboro;
+
+      /*normal text color*/
+      color:         black;
+
+      float:         left;
+      text-align:    center;
+      border-top:2px solid #815444;
+      border-right:  2px solid #3d1000;
+      border-bottom: 2px solid #3d1000;
+      border-left:   2px solid #815444;
+    }
+
+    ul#nav li a:hover 
+      {
+        /*hover button color*/
+        background:     skyblue;
+        color:          #000;
+        border-top:     2px solid #815444;
+        border-right:   2px solid #c59888;
+        border-bottom:  2px solid #c59888;
+        border-left:    2px solid #815444;
+      }
+
+  <!-- *******************************************-->
+  <!-- *  Navigation bar button characteristics  *-->
+  <!-- *  are above (in CSS)                     *-->
+  <!-- *******************************************-->
+  
+    .highlightme
+      { 
+        background-color:powderblue; 
+      }
+
+    .twilightzoneback 
+      { 
+        background-color: powderblue; 
+      }
+
+    .blue-text
+      {
+        color: blue;
+      }
+
+    .green-text 
+      {
+        color: green;
+      }
+
+    .red-text 
+      {
+      color: red;
+      }
+
+    h1 
+      {
+        font-size: 40px;
+        font-family: Arial, Monospace;
+        text-align: center;
+        color: red;
+      }
+
+    h2
+      {
+        font-size: 35px;
+        font-family: Arial, Monospace;
+        /*text-align: justify; DOES NOT SEEM TO WORK!!*/
+        text-align: center;
+        /*text-align: center;*/
+        /*text-align: left;*/
+        /*text-align: right;*/
+        /*text-align: justify;*/
+        color: blue;
+      }
+
+    h6 
+      {
+        font-family: 'Dancing Script', cursive; 
+        text-align: center; 
+        font-size: 32px; 
+        color: black; 
+        background-color: #a186dc;
+        margin: 0px 50px 300px 50px;
+      }
+
+    .border 
+      {
+        border-color: #7a4dde;
+        border-width: 0px; 
+        border-style: solid; 
+        background-color: #7a4dde;
+      }
+
+    .border1
+      {
+        border-color: #ddcdf1;
+        border-width: 10px; 
+        border-style: solid; 
+        background-color: #ddcdf1; 
+        margin:0px 50px 0px 50px;
+      }
+
+    h7 
+      {
+        font-size: 50px;
+        font-family: "Comic Sans MS", comic,        "Clarendon", Georgia, "Times New Roman", Times, serif;
+        font-weight: 700;
+        color: #00addc;
+        letter-spacing: .02em;
+        line-height: 1.3; 
+      }
+
+    p
+      {
+      color: white;
+      background-color: black;
+      font-size: 20px;
+      font-family: Monospace;
+      text-align: center; 
+
+      /* text-align: left; */
+      }
+
+
+    .thick-green-border 
+      {
+        border-color: green;
+        border-width: 10px;
+        border-style: solid;
+        border-radius: 50%;
+      }
+
+    .thick-blue-border 
+      {
+        border-color: blue;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 80%;
+      }
+
+    /* size of twilight zone circle */
+    .tz-image 
+      {
+        width: 100px;
+      }
+
+
+    /* size of snoopy circle */
+    .smaller-image 
+      {
+        width: 200px;
+      }
+
+  </style>
+
+  <!-- *******************************************-->
+  <!-- *    Navigation bar buttons are below     *-->
+  <!-- *******************************************-->
+
+  <header class="navbar navbar-default navbar-fixed-top" id="banner">
+ 
+
+  <div class="container">
+ 
+  <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+  </button>
+    
+
+  <nav 
+    class="collapse navbar-collapse" 
+    id="navbar" 
+    role="navigation">
+     
+
+    <ul class="nav navbar-nav navbar-right">
+   
+
+
+    <div id="nav-wrapper">
+      <ul id="nav">
+
+        <li>
+          <a class="scrollable" href="#about">About
+          </a>
+        </li>
+ 
+ 
+        <li>
+          <a class="scrollable" href="#portfolio">Portfolio
+          </a>
+        </li>
+ 
+
+        <li>
+          <a class="scrollable" href="#FAQ">FAQs
+          </a>
+        </li>
+
+
+       <li>
+         <a class="scrollable" href="#contact">Contact
+         </a>
+       </li>
+
+
+  </ul>
+
+  </nav>
+  
+
+  </div>
+
+  <!-- *******************************************-->
+  <!-- *    Navigation bar buttons are above     *-->
+  <!-- *******************************************-->
+
+  <h1
+    class="text-center">There is nothing wrong with your television set.
+  </h1>
+
+  <h1
+    class="text-center">Do not attempt to adjust the picture...
+  </h1>
+
+  <!-- Outer Limits Circles -->
+  <a
+    href="#"><img class="tz-image" src="carla.jpg" style="padding-left:20px; float:left; width:150px; height:150px;" >
+  </a>
+
+  <a href="#"><img class="tz-image" src="being.jpg" style="padding-right:20px; float:right; width:150px; height:150px;" >
+  </a>
+
+  <h2 
+     class="text-center">(Website Design for SCCode Portfolio Project) 
+  </h2>
+
+  <title>
+    backgroundImage.html
+  </title>
+
+  <h3> . </h3> 
+  <h3> . </h3> 
+
+  <style type = "text/css">
+
+    body
+      {
+      background-image: url("back_1200.jpg");
+      no-repeat center center fixed;
+      background-size: cover;
+      height: 555px;
+      }
+
+  </style>
+
+  </style>
+
+ <body>
+
+
+  <a href="#"><img class="smaller-image thick-blue-border" src="snoop_400_400_04.jpg" style="float:right; width:200px; height:200px;" >
+  </a>
+
+  <div class="centerDiv"> 
+  </div>
+
+  <section id="about">
+ 
+
+  <header>
+ 
+  <h3> . </h3> 
+  
+      <div class="intro-text">
+    
+    <p style="text-align:left">Experience: Worked at a fab shop, producing flamecut metal parts for offshore drilling rigs. I've taught AutoCAD at the local college in Houston, TX. I've designed, installed, documented, and maintained the Ethernet / fibre optic networks in the engineering labs at the NASA Johnson Space Center in what is left of Houston, TX. (The biggest building, (building 10) is where they produce the velcro-laced containers for the ISS as well as the parts for the astronaut jet packs (for EVAs) and parts of the Space Shuttle.) I've also worked on Family Tree websites, with scanning and storing of family photographs and legal documents. Regrets? I've had a few; but then again, too few to mention.
+   <br><br>Certifications: B.S. Degree in Electrical Technology, Certified AutoCAD Professional, CompTIA A+ certification.
+    </p>
+
+
+     </div>
+     
+  </header>
+
+
+ <h3> . </h3> 
+
+  <!-- Gallery Grid Section-->
+ 
+  <section id="portfolio">
+
+
+  <h2 
+     class="text-center">Portfolio 
+  </h2>
+
+  <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+
+  <!-- flame section-->
+ 
+  <section id="flame">
+ 
+    <li><img src="flame3_600.jpg"     style= "width: 60%; height:60%; padding-left:20%;   margin: 0 auto;"  
+    </li>
+<br>
+
+    <p>Flamecutting, using an oxygen-fuel gas and a cutting torch, cuts a huge pinion gear that will engage the rack in an offshore drilling rig.
+    </p>
+
+<br><br>
+
+
+  <!-- flame2 section-->
+ 
+
+  <section id="flame2">
+ 
+    <li><img src="flame1_600.jpg"    style= "width: 60%;   height:60%; padding-left:20%;  margin: 0 auto;"  
+    </li>
+<br>
+    <p>Using multiple cutting torches and oxygen-fuel gas, a computer numeric controlled cutting machine produces multiple gear racks.
+    </p>
+
+<br><br>
+
+
+  <!-- cliffs section-->
+ 
+  <section id="cliffs">
+ 
+    <li><img src="cliffs1_600.jpg"    style= "width: 60%;   height:60%; padding-left:20%;   margin: 0 auto;"  
+    </li>
+<br>
+    <p>An offshore drilling rig (referred to as a jack-up rig) uses the flamecut racks on the leg sections.
+    </p>
+
+
+<br><br>
+
+
+  <!-- moon section-->
+ 
+  <section id="moon">
+ 
+    <li><img src="moon_600.jpg"       style= "width: 60%;   height:60%; padding-left:20%;   margin: 0 auto;"  
+    </li>
+<br>
+    <p>One of the staged lunar landings, filmed in a warehouse near Houston, Texas.
+    </p>
+
+<br><br>
+
+  <!-- jetpack section-->
+ 
+   <section id="jetpack">
+ 
+    <li><img src="jetpack_600.jpg"    style= "width: 60%;   height:60%; padding-left:20%;  margin: 0 auto;"  
+    </li>
+<br>
+    <p>Sections of the EVA jetpacks were manufactured in Building 10 at the NASA JSC, where several of the multi-million dollar machine tools created high precision parts.
+    </p>
+
+<br><br>
+
+  </section>
+ 
+
+  <section id="FAQ">
+ 
+
+  <header>
+   
+
+    <div class="intro-text">
+  
+    <h2 
+      class="text-center">Frequently Asked Questions
+    </h2>
+       <p style="text-align:left">
+         Q. Why are you working on this project?
+         <br>
+         A. For fun, maybe to get some experience to design professional websites.
+         <br> <br>
+         Q. Did you take these photographs yourself? 
+         <br>
+         A. Yes, except for the ones in outer space. (And the moonwalks filmed in a secret warehouse outside of          Houston.)
+         <br> <br>
+         Q. What programming language is used to create this website? 
+         <br>
+         A. Mostly HTML5, with a little CSS thrown in. (No Javascript at this time.)
+         <br><br>
+         Q. How long did it take to create this Portfolio Project website? 
+         <br>
+         A. Too long.
+       </p>
+
+
+     </div>
+     
+    </header>
+
+
+  <!-- *******************************************-->
+  <!-- *      Contact Section is below           *-->
+  <!-- *******************************************-->
+
+  <section id="contact">
+ 
+ 
+  <h2>Contact Me
+  </h2>
+    
+
+  <div>
+     
+    <form id="contactForm" novalidate="">
+    
+    <div class="form-item">
+
+    <input id="name" type="text" placeholder="Name" required=""/>
+   
+  </div>
+   
+     
+  <div class="form-item">
+ 
+    <input id="email" type="email" placeholder="Email Address" required=""/>
+     
+  </div>
+  
+
+  <div class="form-item">
+ 
+     <input id="phone" type="tel" placeholder="Phone Number" required=""/>
+     
+  </div>
+    
+
+  <div class="form-item">
+ 
+    <input id="message" rows="5" placeholder="Message" required="">
+    </textarea>
+  
+  </div>
+  
+  <br/>
+  
+  <button type="submit">Send Contact Information
+  </button>
+
+ 
+  </form>
+  
+    
+  </div>
+ 
+
+  </section>
+ 
+
+  <!-- *******************************************-->
+  <!-- *      Contact Section is above           *-->
+  <!-- *******************************************-->
+
+  <p> 
+  </p>
+
+  <p>
+  </p>
+
+ </body>
+
+  <footer>
+    <p style="text-align:center">Coded by DR Wootten</p>
+    <p style="text-align:center">(C) 2017 by DRW Productions. All rights reserved.</p>
+  </footer>
+
+  </html>
